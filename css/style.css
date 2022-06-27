@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* css for the passcode */
+body > main > .passcode{
+    height: 70%;
+    width: 40%;
+    z-index: 1000;
+    position: absolute;
+    background-image: radial-gradient(white,#f54708);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 15px rgba(4, 4, 4, 0.6);
+}
+body > main > .passcode > .passcode-entry > p{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size:large;
+    font-weight: bolder;
+    font-style: italic;
+}
+body > main > .passcode > .passcode-entry > input{
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+}
+body > main > .passcode > .passcode-entry > .for-button {
+    height: 30px;
+    width: 100%;
+    text-align: center;
+}
+body > main > .passcode > .passcode-entry > .for-button > button{
+    height:100%;
+    width:60px;
+    border-radius: 5px;
+    border:2px solid blue;
+}
+.show{
+
+}
+
+
+
+
+
+/* main section (total background) */
+body > .main{
+    background-image: linear-gradient(to bottom right, rgb(192, 41, 66), white);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* css for chat screen */
+body > main > .chat-screen{
+    height: 90%;
+    width: 25%;
+    background-color: rgb(79, 50, 64);
+    border-radius: 20px;
+    /* opacity: 50%; */
+    display: flex;
+    flex-direction: column;
+}
+/* chat header */
+body > main > .chat-screen > .header{
+    height: 10%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    border-radius:  20px 20px 0px 0px;
+    background-color: rgb(8, 7, 7);
+}
+/* left side image on chat header */
+body > main > .chat-screen > .header > img{
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+/* text in chat header */
+body > main > .chat-screen > .header > p{
+    color: white;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: small;
+    padding: 10px 10px 10px 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+/* css for main chat section where messages will appear */
+body > main > .chat-screen > .main-section{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.main-section::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.main-section {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body > main > .chat-screen > .main-section > .right{
+    border-radius: 5px;
+    padding: 5px 0px 5px 10px;
+    margin: 10px 0;
+    height: auto;
+    block-size: fit-content;
+    width: 70%;
+    padding-right: 20px 10px;
+    text-align:left;
+    color:aliceblue;
+    background-color: rgb(14, 13, 13);
+    position: relative;
+    left: 95px;
+    right: 100px;
+}
+body > main > .chat-screen > .main-section > .left{
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 5px 10px 10px 0px;
+    margin: 10px 0;
+    height: auto;
+    width: 70%;
+    block-size: fit-content;
+    padding-right: 20px 10px;
+    text-align:end;
+    color:aliceblue;
+    background-color: rgb(8, 7, 7);
+    position: relative;
+}
+body > main > .chat-screen > .main-section > .right > .buttonDel{
+    height: 20px;
+    width: 50px;
+    background-color: rgb(209, 81, 102);
+    display: inline;
+    border-radius: 5px;
+    color: aliceblue;
+}
+
+
+/* section to write messages and send */
+body > main > .chat-screen > .footer{
+    height: 10%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    border-radius:  0px 0px 20px 20px;
+    background-color:rgb(8, 7, 7);
+}
+body > main > .chat-screen > .footer > p{
+    color: rgb(253, 247, 247);
+    text-align: left;
+    font-weight: lighter;
+    padding: 10px 0px 10px 10px;
+}
+/* send button */
+body > main > .chat-screen > .footer > button{
+    color: white;
+    border-radius: 20px;
+    height: 80%;
+    margin:5px 2px 0px 0px;
+    /* background-image: linear-gradient(to right,rgb(209, 81, 102),rgb(241, 232, 232)); */
+    background-color: rgb(209, 81, 102);
+}
+
+.chat-textbox{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding-left: 5px;
+  }
