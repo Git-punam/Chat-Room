@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 /* css for the passcode */
 body > main > .passcode{
     height: 70%;
@@ -42,9 +41,6 @@ body > main > .passcode > .passcode-entry > .for-button > button{
     border-radius: 5px;
     border:2px solid blue;
 }
-
-
-
 
 
 /* main section (total background) */
@@ -191,10 +187,6 @@ body > main > .chat-screen > .main-section > .left{
     padding-top: -20px;
     /* background-color: #f54708; */
 }
-
-
-
-
 
 
 /* section to write messages and send */
