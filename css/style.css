@@ -159,14 +159,15 @@ body > main > .chat-screen > .main-section > .left{
     /* background-color: white; */
 }
 
-.div-for-image{
-    height: 100%;
-    width: 100%;
-    padding: 8px;
-    object-fit: cover;
+.div-for-image>img{
+    height: 50%;
+    width: 50%;
+    /* margin: 10px; */
+    object-fit:scale-down;
     /* background-color: green; */
 
 }
+
 .text-message{
     height: 90%;
     width: 100%;
