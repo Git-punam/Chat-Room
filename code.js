@@ -68,7 +68,7 @@ firebase.database().ref('messages').on('child_added', (snapshot) => {
               var divforImage = document.createElement("div");    
               divforImage.setAttribute("class","div-for-image");
               var chatImage = document.createElement("img");
-              chatImage.setAttribute("src","/image/chat-head.png");
+              chatImage.setAttribute("src","image/chat-head.png");
               divforImageTime.appendChild(chatImage);
 
               //this is for the time displayed
@@ -103,7 +103,7 @@ firebase.database().ref('messages').on('child_added', (snapshot) => {
         var divforImage = document.createElement("div");    
         divforImage.setAttribute("class","div-for-image");
         var chatImage = document.createElement("img");
-        chatImage.setAttribute("src","/image/chat-head.png");
+        chatImage.setAttribute("src","image/chat-head.png");
         divforImageTime.appendChild(chatImage);
 
         //this is for the time displayed
