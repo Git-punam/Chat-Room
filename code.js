@@ -1,26 +1,33 @@
 var database = firebase.database();
+let setGender='';
 
-// asking for username getting the message typed by the user
+// asking for username
 let username = prompt("Please enter your name:","");
-let send = document.querySelector(".send-button")
 
+//logic to choose male or female avatar
+for (var i = 0; i < 2; i++) {
+  document.querySelectorAll(".a-image")[i].addEventListener("click", function() {
+    setGender = this.value;
+  });
+}
+
+//upon clicking on 'send' database write operation will be performed
+let send = document.querySelector(".send-button")
 send.addEventListener('click', writeUserData)
+
 
 // writing the message to database typed by user
 function writeUserData() {
   let msg = document.querySelector(".chat-textbox").value;
-  
   let time = new Date();
   let hrs = time.getHours();
   let min = time.getMinutes();
-  if(hrs>=12 && hrs<23)
-      var dtime=`${hrs}:${min}`+"PM";
-  else
-      var dtime=`${hrs}:${min}`+"AM";
+  var dtime=`${hrs}:${min}`;
   firebase.database().ref('messages/').push().set({
     message : msg,
     userName: username,
-    textTime: dtime
+    textTime: dtime,
+    gender : setGender
 });
   document.querySelector(".chat-textbox").value = "";
 }
@@ -30,9 +37,9 @@ function writeUserData() {
 firebase.database().ref('messages').on('child_added', (snapshot) => {
   const data = snapshot.val();
 
-  if(username == data.userName)
+  //both the username and gender will be checked to identify the user
+  if((username == data.userName) && (data.gender == setGender) )
   {
-    
     var side = document.createElement("div");
     side.setAttribute("class", "right");
 
@@ -57,7 +64,7 @@ firebase.database().ref('messages').on('child_added', (snapshot) => {
               divfortextDel.appendChild(displayMsg)
               divfortextDel.appendChild(buttonDel)
 
-              //  document.getElementById(`message-${snapshot.key}`).innerHTML = "del";
+              //document.getElementById(`message-${snapshot.key}`).innerHTML = "del";
 
               
 
@@ -68,8 +75,11 @@ firebase.database().ref('messages').on('child_added', (snapshot) => {
               var divforImage = document.createElement("div");    
               divforImage.setAttribute("class","div-for-image");
               var chatImage = document.createElement("img");
-              chatImage.setAttribute("src","image/chat-head.png");
-              divforImageTime.appendChild(chatImage);
+              if(data.gender == 'female')
+                  chatImage.setAttribute("src","image/female.png");
+              else
+                  chatImage.setAttribute("src","image/male.png");
+              divforImage.appendChild(chatImage);
 
               //this is for the time displayed
               var displayTime = document.createElement("div");     
@@ -102,9 +112,12 @@ firebase.database().ref('messages').on('child_added', (snapshot) => {
         //this is for the chat-head image
         var divforImage = document.createElement("div");    
         divforImage.setAttribute("class","div-for-image");
-        var chatImage = document.createElement("img");
-        chatImage.setAttribute("src","image/chat-head.png");
-        divforImageTime.appendChild(chatImage);
+          var chatImage = document.createElement("img");
+          if(data.gender == 'female')
+              chatImage.setAttribute("src","image/female.png");
+          else
+              chatImage.setAttribute("src","image/male.png");
+        divforImage.appendChild(chatImage);
 
         //this is for the time displayed
         var displayTime = document.createElement("div");     
@@ -174,6 +187,7 @@ function user_access() {
     // console.log(userCode);
 
       if (user_input == userCode.password) {
+
         document.querySelector(".passcode").style.display = "none";
         document.querySelector(".chat").classList.add('chat-screen');
       }

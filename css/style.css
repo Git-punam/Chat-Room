@@ -17,29 +17,45 @@ body > main > .passcode{
     align-items: center;
     box-shadow: 4px 4px 15px rgba(4, 4, 4, 0.6);
 }
-body > main > .passcode > .passcode-entry > p{
+body > main > .passcode > .passcode-entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body > main > .passcode > .passcode-entry p{
     text-align: center;
     color: rgb(0, 0, 0);
     font-size:large;
     font-weight: bolder;
     font-style: italic;
 }
-body > main > .passcode > .passcode-entry > input{
+body > main > .passcode > .passcode-entry > .for-passcode >#user_input{
     height: 30px;
     width: 100%;
     border: none;
     border-radius: 20px;
 }
-body > main > .passcode > .passcode-entry > .for-button {
+body > main > .passcode > .passcode-entry > .for-passcode >.for-button {
     height: 30px;
     width: 100%;
     text-align: center;
 }
-body > main > .passcode > .passcode-entry > .for-button > button{
+body > main > .passcode > .passcode-entry > .for-passcode > .for-button > button{
     height:100%;
     width:60px;
     border-radius: 5px;
     border:2px solid blue;
+}
+body > main > .passcode > .passcode-entry >.choose-avatar >.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:aliceblue;
+}
+.a-image{
+    height: 90px;
+    width: 90px;
 }
 
 
@@ -120,17 +136,13 @@ body > main > .chat-screen > .main-section > .right {
     width: 70%;
     display: flex;
     position: relative;
-    /* background-color: blue; */
     left: 120px;
-    /* right: 0px; */
 }
 body > main > .chat-screen > .main-section > .right > .div-for-text-del{
     height: 100%;
     width: 60%;
     display: flex;
     flex-direction: column;
-    /* background-color: red; */
-    /* margin-right: -10px; */
 }
 body > main > .chat-screen > .main-section > .right > .div-for-text-del > .buttonDel{
     height: 20px;
@@ -148,33 +160,32 @@ body > main > .chat-screen > .main-section > .left{
     display: flex;
     height: auto;
     width: 70%;
-    /* position: relative; */
-    /* background-color: blue; */
 }
 .parent-for-img-time{
     display: flex;
     flex-direction: column;
     height: auto;
     width: 30%;
-    /* background-color: white; */
 }
 
-/* .div-for-image>img{
-    height: 50%;
-    width: 50%;
-    /* margin: 10px; */
-    /* object-fit:scale-down; */
-    /* background-color: green; */
+.div-for-image{
+    height: 70%;
+    width: 100%;
+    border-radius: 20%;
+}
 
-/* }  */
+.div-for-image >img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    opacity: 20%;
+}
 
 .text-message{
     height: 90%;
     width: 100%;
     border-radius: 5px;
     padding: 5px 10px 10px 0px;
-    margin-top: 5px;
-    /* block-size: fit-content; */
     padding-right: 20px 10px 0px 20px;
     text-align:end;
     color:aliceblue;
@@ -186,7 +197,6 @@ body > main > .chat-screen > .main-section > .left{
     font-size: small;
     text-align: center;
     padding-top: -20px;
-    /* background-color: #f54708; */
 }
 
 
@@ -211,7 +221,6 @@ body > main > .chat-screen > .footer > button{
     border-radius: 20px;
     height: 80%;
     margin:5px 2px 0px 0px;
-    /* background-image: linear-gradient(to right,rgb(209, 81, 102),rgb(241, 232, 232)); */
     background-color: rgb(209, 81, 102);
 }
 body > main > .chat-screen > .footer > .chat-textbox{

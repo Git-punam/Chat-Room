@@ -9,14 +9,28 @@
 </head>
 <body>
     <main class="main">
-        <!-- for passcode -->
+
+        <!-- for passcode and choice for avatar-->
         <div class="passcode">
             <div class="passcode-entry">
-                <p>Enter your passcode:</p><br/>
-                <input type="text" name="user" id="user_input"><br/><br/>
-                <div class="for-button">
-                    <button class="checking_btn" onclick="user_access()">Login</button>
+
+                <!-- div for choosing the avatar -->
+                <div class="choose-avatar">
+                    <p>Choose your avatar:</p><br/>
+                    <div class="avatar">
+                        <input class="a-image" type="image" src="image/male-chat-head.jpg" value="male"/>
+                        <input class="a-image" type="image" src="image/female-chat-head.jpg" value="female"/>
+                    </div>  
                 </div>
+                <!-- div to enter the passcode -->
+                <div class="for-passcode">
+                    <br/><br/><p>Enter your passcode:</p>
+                    <input type="text" name="user" id="user_input"><br/><br/>
+                    <div class="for-button">
+                        <button class="checking_btn" onclick="user_access()">Login</button>
+                    </div>
+                </div>
+
             </div>  
         </div>
 
