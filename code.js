@@ -8,8 +8,14 @@ let username = prompt("Please enter your name:","");
 for (var i = 0; i < 2; i++) {
   document.querySelectorAll(".a-image")[i].addEventListener("click", function() {
     setGender = this.value;
+    console.log(this);
   });
 }
+// for (var i = 0; i < 2; i++) {
+//   document.querySelectorAll(".a-image")[i].addEventListener("click", () => {
+//     setGender = this.value;
+//   });
+// }
 
 //upon clicking on 'send' database write operation will be performed
 let send = document.querySelector(".send-button")
@@ -167,7 +173,6 @@ function deleteMsg(self) {
 }
 
 
-
 // access code set by admin
 function passcode() {
   let passcode = document.getElementById("passcode").value;
@@ -184,9 +189,11 @@ function user_access() {
   database.ref('userpasscode/').on('child_added', (snapshot) => {
     let userCode = snapshot.val();
 
-    // console.log(userCode);
+    console.log(user_input);
+    console.log(userCode);
+    console.log(user_input == userCode);
 
-      if (user_input == userCode.password) {
+      if (user_input == userCode) {
 
         document.querySelector(".passcode").style.display = "none";
         document.querySelector(".chat").classList.add('chat-screen');
