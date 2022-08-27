@@ -7,19 +7,20 @@ let username = prompt("Please enter your name:","");
 //logic to choose male or female avatar
 for (var i = 0; i < 2; i++) {
   document.querySelectorAll(".a-image")[i].addEventListener("click", function() {
-    setGender = this.value;
     console.log(this);
+    setGender = this.value;
+    this.classList.toggle("glow")
   });
 }
-// for (var i = 0; i < 2; i++) {
-//   document.querySelectorAll(".a-image")[i].addEventListener("click", () => {
-//     setGender = this.value;
-//   });
-// }
+
 
 //upon clicking on 'send' database write operation will be performed
 let send = document.querySelector(".send-button")
 send.addEventListener('click', writeUserData)
+send.addEventListener('keypress', function(event){
+  if(event.key==="Enter")
+    event.writeUserData()
+  })
 
 
 // writing the message to database typed by user
@@ -81,8 +82,10 @@ firebase.database().ref('messages').on('child_added', (snapshot) => {
               var divforImage = document.createElement("div");    
               divforImage.setAttribute("class","div-for-image");
               var chatImage = document.createElement("img");
-              if(data.gender == 'female')
-                  chatImage.setAttribute("src","image/female.png");
+              if(data.gender == 'female'){
+                chatImage.setAttribute("src","image/female.png");
+              }
+                  
               else
                   chatImage.setAttribute("src","image/male.png");
               divforImage.appendChild(chatImage);
