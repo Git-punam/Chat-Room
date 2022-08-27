@@ -5,13 +5,17 @@ let setGender='';
 let username = prompt("Please enter your name:","");
 
 //logic to choose male or female avatar
-for (var i = 0; i < 2; i++) {
-  document.querySelectorAll(".a-image")[i].addEventListener("click", function() {
-    console.log(this);
-    setGender = this.value;
-    this.classList.toggle("glow")
-  });
-}
+document.querySelector("#a-image-male").addEventListener("click", function() {
+  this.classList.add("glow")
+  if(document.querySelector("#a-image-female").classList.contains('glow'))
+      document.querySelector("#a-image-female").classList.remove('glow')
+});
+document.querySelector("#a-image-female").addEventListener("click", function() {
+  this.classList.add("glow")
+  if(document.querySelector("#a-image-male").classList.contains('glow'))
+    document.querySelector("#a-image-male").classList.remove('glow')
+});
+
 
 
 //upon clicking on 'send' database write operation will be performed
